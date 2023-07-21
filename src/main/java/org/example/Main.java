@@ -31,7 +31,7 @@ public class Main {
         JPanel responsePanel = new JPanel(new BorderLayout());
 
         // Dropdown for selecting API request
-        String[] apiRequests = { "API Request 1", "API Request 2" };
+        String[] apiRequests = { "Adding Product", "Adding Category" };
         JComboBox<String> apiRequestComboBox = new JComboBox<>(apiRequests);
         apiRequestComboBox.setSelectedIndex(0); // Set the default selection to "API Request 1"
 
@@ -56,17 +56,17 @@ public class Main {
                 String apiURL;
                 String requestBody;
 
-                if (selectedRequest.equals("API Request 1")) {
-                    apiURL = "http://localhost/example/v1/hotels";
+                if (selectedRequest.equals("Adding Category")) {
+                    apiURL = "http://localhost:8080/category/tambah";
                     apiURLTextArea.setText("API URL: " + apiURL);
 
-                    requestBody = "{\"name\":\"morpheus\",\"description\":\"morpheus\",\"city\":\"morpheus\"}";
+                    requestBody = "{\"item\":\"category\"}";
                     requestBodyTextArea.setText("Request Body: " + requestBody);
-                } else if (selectedRequest.equals("API Request 2")) {
-                    apiURL = "http://localhost:getdata2";
+                } else if (selectedRequest.equals("Adding Product")) {
+                    apiURL = "http://localhost:8080/product/tambah";
                     apiURLTextArea.setText("API URL: " + apiURL);
 
-                    requestBody = "{\"nik\":\"1000\"}";
+                    requestBody = "{\"item\":\"product\"}";
                     requestBodyTextArea.setText("Request Body: " + requestBody);
                 } else {
                     // Handle an invalid selection, if necessary
